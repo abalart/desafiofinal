@@ -1,7 +1,7 @@
 paths:
   /api/carts:
     post:
-      summary: Crea un nuevo cart.
+      summary: Crea un nuevo carrito.
       tags:
         - Carts
       requestBody:
@@ -12,20 +12,20 @@ paths:
               $ref: '#components/requestBodies/CartInput'
       responses:
         "200":
-          description: Cart creado exitosamente
+          description: Carrito creado exitosamente
           schema:
             $ref: '#components/schemas/Cart'
         "500":
           description: Error en el servidor
         "401":
-          description: No autorizado
+          description: Usuario no autorizado
     get:
-      summary: Devuelve todos los carts en la base de datos.
+      summary: Regresa todos los carritos de la base de datos.
       tags:
         - Carts
       responses:
         "200":
-          description: Los carritos fueron devueltos satisfactoriamente
+          description: Los carritos fueron devueltos correctamente
           content: 
             application/json:
               schema:
@@ -33,58 +33,58 @@ paths:
                 items:
                   $ref: '#components/schemas/Cart'
         "500":
-          description: Error del servidor. 
+          description: Error en el servidor. 
   /api/carts/{cid}:
     get:
-      summary: Devuelve el cart de la base de datos que coincida con el Id suministrado.
+      summary: Devuelve el carrit de la base de datos que coincida con el id suministrado.
       tags:
         - Carts
       parameters:
       - name: cid
         in: path
         required: true
-        decription: ID del cart que se busca
+        decription: id del carrito que se busca
         schema:
           $type: String
       responses:
         "200":
-          description: Cart encontrado
+          description: Carrito encontrado
           content:
             application/json:
               schema:
                 $ref: '#components/schemas/Cart'
         "404":
-          description: Cart no encontrado
+          description: Carrito no encontrado
         "500":
-          description: Error en el servidor
+          description: Error del servidor
     delete:
-      summary: Elimina el cart del id suministrado por parametro.
+      summary: Elimina el carrito con el id suministrado por parametro.
       tags:
         - Carts
       parameters:
         - name: cid
           in: path
-          description: ID del cart a eliminar
+          description: ID del carrito a eliminar
           required: true
           type: string
       responses:
         "200":
-          description: Cart eliminado con éxito
+          description: Carrito eliminado con éxito
         "401":
           description: No autorizado
         "404":
-          description: Cart no encontrado
+          description: Carrito no encontrado
         "500":
-          description: Error en el servidor
+          description: Error del servidor
     put:
-      summary: Reemplaza todos los productos del cart id suministrado por parametro.
+      summary: Reemplaza todos los productos del Carrito por el id suministrado por parametro.
       tags:
         - Carts
       parameters:
       - name: cid
         in: path
         required: true
-        decription: ID del cart a actualizar
+        decription: ID del Carrito a actualizar
         schema:
           $type: String
       requestBody:
@@ -95,18 +95,18 @@ paths:
               $ref: '#components/requestBodies/CartInput'
       responses:
         "200":
-          description: Cart actualizado con exito
+          description: Carrito actualizado con exito
           schema:
             $ref: '#components/schemas/Cart'
         "404":
-          description: Cart no encontrado
+          description: Carrito no encontrado
         "500":
-          description: Error en el servidor
+          description: Error del servidor
         "401":
-          description: No autorizado
+          description: Usuario no autorizado
   /api/carts/{cid}/products/{pid}:
     post:
-      summary: Agrega al cart definido por el cid el producto definido por el pid.
+      summary: Agrega al Carrito definido por el cid suminitrado el producto definido por el pid.
       tags:
         - Carts
       security:
@@ -117,27 +117,27 @@ paths:
           schema:
             type: string
           required: true
-          description: ID del cart al que agregar el producto.
+          description: ID del Carrito al que asociar el producto.
         - in: path
           name: pid
           schema:
             type: string
           required: true
-          description: El id del producto a agregar al cart
+          description: El id del producto a agregar al Carrito
       responses:
         '200':
-          description: El cart se ha actualizado
+          description: El Carrito se ha actualizado
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Cart'
         '404':
-          description: No se encontró el cart o el producto
+          description: No se encontró el Carrito o el producto
         '401':
-          description: No Autorizado
+          description: Usuario no Autorizado
   /api/carts/{cid}/purchase:
     post:
-      summary: Procesa la compra del cart definido en el cid y emite un ticket
+      summary: Procesa la compra del carrito definido en el cid y emite un ticket a modo de resumen
       tags: 
         - Carts
       security:
@@ -148,18 +148,18 @@ paths:
           schema:
             type: string
           required: true
-          description: El id del cart a comprar
+          description: El id del carrito a comprar
       responses:
         '200':
-          description: El cart se ha comprado con exito
+          description: El carrito se ha processado con éxito
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Cart'
         '404':
-          description: No se encontró el cart o el producto
+          description: No se encontró el carrito o el producto
         '401':
-          description: No Autorizado
+          description: Usuario no autorizado
 components:
   schemas:
     Cart:
@@ -167,7 +167,7 @@ components:
       properties:
         _id:
           type: ObjectId
-          description: ID auto generado by mongo
+          description: ID auto generado por mongo
         products:
           type: Array
           description: Lista de productos
@@ -179,10 +179,10 @@ components:
               quantity:
                 type: Number
       example:
-        _id: ObjectId("64467ae3c5233f66c176f530")
+        _id: ObjectId("64739d50541a365a66e07598")
         products: 
-          - {"product": "63cef84992e9f46663931ee6" ,"quantity": 1} 
-          - {"product": "63d3ee9aebf5066d8c8ba619" ,"quantity": 3}
+          - {"product": "647375cc821c4c00fcca2ed0" ,"quantity": 2} 
+          - {"product": "647375cd821c4c00fcca2ed3" ,"quantity": 6}
   requestBodies:
     CartInput:
       type: object
@@ -198,7 +198,7 @@ components:
               quantity:
                 type: Number
       example:
-        _id: ObjectId("64467ae3c5233f66c176f530")
+        _id: ObjectId("647375d2821c4c00fcca2ed6")
         products: 
-          - {"product": "63cef84992e9f46663931ee6" ,"quantity": 1} 
-          - {"product": "63d3ee9aebf5066d8c8ba619" ,"quantity": 3}
+          - {"product": "647375d2821c4c00fcca2ed9" ,"quantity": 1} 
+          - {"product": "64739d50541a365a66e07594" ,"quantity": 3}
