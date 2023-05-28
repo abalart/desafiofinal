@@ -7,51 +7,51 @@ paths:
         - Products
       responses:
         "200":
-          description: Los productos fueron devueltos satisfactoriamente
-          content: 
+          description: Los productos fueron devueltos correctamente
+          content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#components/schemas/Product'
+                  $ref: "#components/schemas/Product"
         "500":
-          description: Error del servidor. 
+          description: Error del servidor.
   /api/products/products/{pid}:
     get:
       summary: Obtener un producto por ID
       tags:
         - Products
       parameters:
-      - name: pid
-        in: path
-        required: true
-        decription: ID del producto que se busca
-        schema:
-          $type: String
+        - name: pid
+          in: path
+          required: true
+          decription: ID del producto que se busca
+          schema:
+            $type: String
       responses:
         "200":
           description: Producto encontrado
           content:
             application/json:
               schema:
-                $ref: '#components/schemas/Product'
+                $ref: "#components/schemas/Product"
         "404":
           description: Producto no encontrado
         "500":
           description: Error en el servidor
   /api/products/mockingproducts:
     get:
-      summary: Obtener una muestra aleatoria de productos creados con FakerJS
+      summary: Obtener una muestra autogenerada de productos creados con el modulo Faker
       tags:
         - Products
-      description: Devuelve una muestra aleatoria de productos creados con FakerJS.
+      description: Devuelve una muestra autogenerada de productos creados con Faker
       responses:
         "200":
           description: OK
           schema:
             type: array
             items:
-              $ref: '#components/schemas/Product'
+              $ref: "#components/schemas/Product"
         "500":
           description: Error en el servidor
   /api/products:
@@ -64,12 +64,12 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#components/requestBodies/ProductInput'
+              $ref: "#components/requestBodies/ProductInput"
       responses:
         "200":
           description: Producto creado
           schema:
-            $ref: '#components/schemas/Product'
+            $ref: "#components/schemas/Product"
         "500":
           description: Error en el servidor
         "401":
@@ -81,23 +81,23 @@ paths:
       tags:
         - Products
       parameters:
-      - name: pid
-        in: path
-        required: true
-        decription: ID del producto a modificar
-        schema:
-          $type: String
+        - name: pid
+          in: path
+          required: true
+          decription: ID del producto a modificar
+          schema:
+            $type: String
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#components/requestBodies/ProductInput'
+              $ref: "#components/requestBodies/ProductInput"
       responses:
         "200":
           description: Producto actualizado
           schema:
-            $ref: '#components/schemas/Product'
+            $ref: "#components/schemas/Product"
         "404":
           description: Producto no encontrado
         "500":
@@ -159,21 +159,20 @@ components:
         status:
           type: Boolean
           description: Estado actual del producto
-        owner: 
+        owner:
           type: String
-          description: Propietario del producto publicado. Corresponde al id de un usuario. 
+          description: Propietario del producto publicado en el catalogo. Corresponde al id de un usuario.
           example: admin
       example:
-        _id: ObjectId("64467ae3c5233f66c176f530")
-        title: Cafetera Electrica
-        description: Para todo tipo de preparaciones
+        _id: ObjectId("647376ee821c4c00fcca2eec")
+        title: Cerveza honey
+        description: Deliciosa cerveza rubia
         price: 19.99
         thumbnails:
-          - https://example.com/thumbnail1.jpg
-          - https://example.com/thumbnail2.jpg
-        code: 123456
-        stock: 10
-        category: Electronica
+          - https://www.google.com/url?sa=i&url=https%3A%2F%2Ffiumealmacengourmet.mitiendanube.com%2Fproductos%2Fcerveza-patagonia-bohemian-pilsener%2F&psig=AOvVaw0-XfJYnJv0AsHh5BVKlu1T&ust=1685387633756000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCNiXrqzcmP8CFQAAAAAdAAAAABAE
+        code: 589741
+        stock: 1
+        category: Bebidas alcoholicas
         status: true
         owner: admin
   requestBodies:
@@ -206,17 +205,16 @@ components:
         status:
           type: Boolean
           description: Estado actual del producto
-        owner: 
+        owner:
           type: String
-          description: Propietario del producto publicado. Corresponde al id de un usuario. 
+          description: Propietario del producto publicado. Corresponde al id de un usuario.
           example: admin
       example:
-        title: Cafetera Electrica
+        title: Teclado de notebook
         description: Para todo tipo de preparaciones
         price: 19.99
         thumbnails:
-          - https://example.com/thumbnail1.jpg
-          - https://example.com/thumbnail2.jpg
+          - https://jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUF
         code: 123456
         stock: 10
         category: Electronica
