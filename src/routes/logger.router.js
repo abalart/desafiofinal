@@ -8,7 +8,7 @@ router.get('/', (req, res) =>{
     req.logger.http('http ' + req.httpVersion);
     req.logger.debug('debug '+ req.header);
     req.logger.fatal('fatal ' + req.file);
-    res.send('Donde se usaran los warning... descubrelo en el proximo capitulo de dragon ball');
+    res.send('Warning!');
 });
 
 export default router;
