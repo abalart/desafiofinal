@@ -1,0 +1,44 @@
+
+
+.table-cart {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 1em;
+    font-family: sans-serif;
+    min-width: 450px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: #111b21;
+}
+
+.table-cart thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table-cart th,
+.table-cart td {
+    padding: 12px 15px;
+}
+
+.table-cart tbody tr {
+    border-bottom: 1px solid #202c33;
+    color: #ffffff;
+}
+
+.table-cart tbody tr:nth-of-type(even) {
+    background-color: #202c33;
+    font-weight: bold;
+    color: #009879;
+}
+
+.table-cart tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+img {
+    max-width: 50px;
+}

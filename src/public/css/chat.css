@@ -1,0 +1,114 @@
+@import url('./header.css');
+
+
+body{
+    background-color: #2b89c4;
+    height: 100vh;
+    width: 100vw;
+}
+
+.box-grid{
+    box-sizing: border-box;
+    background-color: #2e8dc8;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas: "input chat";
+    height: 100vh;
+    width: 100vw;
+}
+.box-left{
+    grid-area: input;
+    background-color: #1d5c81;
+
+}
+h1 {
+    text-align: center;
+    height: 30px;
+    color: #D1D7DB;
+}
+
+
+.inputBox{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+#username{
+    text-align: start;
+    padding-left: 10px;
+    height: 30px;
+    color: white;
+    font-family: sans-serif;
+    width: 50%;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.box-input-text{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #202c33;
+}
+
+input{
+    width: 100%;
+    background-color: #2a3942;
+    height: 30px;
+    border: 1px solid #2a3942;
+    border-radius: 8px;
+    color: #D1D7DB;
+    padding: 6px 12px 6px;
+    margin: 5px 10px;
+}
+
+input:focus{
+    outline: none;
+}
+
+.boxMessage{
+    grid-area: chat;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+    overflow: hidden;
+    background-image: url('../img/bg-chat.png');
+}
+.bubble{
+    padding: 6px 9px 8px 9px;
+    border: solid 1px #082e26;
+    border-radius: 8px;
+    background-color: #0a2c24;
+    color: #19526f;
+    width: auto;
+    min-width: 10px;
+    max-width: 300px;
+    margin: 3px 0px 3px 0px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow-wrap: break-word;
+}
+.bubble-user{
+    text-align: start;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+.bubble-message{
+    font-family: 'Roboto', sans-serif;
+    text-align: start;
+    margin: 0px;
+}
+.hour{
+    margin: 5px 0 -10px 4px;
+    font-size: 70%;
+    padding: 2px;
+    float: right;
+}
+
+

@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="form-container">
+        <h1>Change password</h1>
+        <p>introduce a new password</p>
+        {{#if message}}
+        <p style="color:red">{{message}}</p>
+        {{/if}}
+        <form action="/session/restore" method="post">
+            <label for="password">new password</label>
+            <input class="controls" type="password" name="password" required id="password" placeholder="Enter your password" value="{{value}}">
+            <button class="botons" type="submit">Change</button>
+        </form>
+    </div>
+</div>
+<link rel="stylesheet" href="/css/log.css">

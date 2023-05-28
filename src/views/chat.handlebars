@@ -1,0 +1,22 @@
+<div class="box-grid">
+    <div class="box-left">
+        <h1>
+            Kratos chat
+        </h1>
+
+        <div class="inputBox">
+            <i id="username"></i>
+            <i id="email"></i>
+            <div class="box-input-text">
+                <input placeholder="Escribe un mensaje aquí" title="Escribe un mensaje aquí" id="chatbox" type="text">
+            </div>
+        </div>
+
+    </div>
+    <div class="boxMessage" id="messageLogs"></div>
+</div>
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>
+<link rel="stylesheet" href="/css/{{style}}">

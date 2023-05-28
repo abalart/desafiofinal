@@ -1,0 +1,28 @@
+@import url('./header.css');
+@import url('./table.css');
+
+
+.carts-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 60px;
+    color: #009879;
+}
+
+
+.carts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 30px 0 30px;
+}
+
+

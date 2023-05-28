@@ -1,0 +1,99 @@
+@import url('./header.css');
+@import url('./form.css');
+
+
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 30px 0 30px;
+}
+
+
+.form-container{
+    width: 400px;
+    background-color: #2a3942;
+    padding: 30px;
+    border-radius: 4px;
+    margin: auto;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 7px 13px 37px #000;
+    white-space: 10px;
+}
+.form-container p{
+    padding:24px 0 24px 0;
+}
+
+form{
+    /* width: 400px;
+    background-color: #2a3942;
+    padding: 30px;
+    border-radius: 4px;
+    margin: auto;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 7px 13px 37px #000; */
+}
+
+form h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.controls{
+    width: 100%;
+    background: #009879;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid white;
+    color: white;
+}
+::placeholder{
+    color: white;
+    border: none;;
+}
+
+form p{
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+
+form a{
+    color: white;
+    text-decoration: none;
+}
+
+form a:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+.botons{
+    width: 100%;
+    background: #009879;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+}
+
+.botons:hover{
+    font-weight: bold;
+    color: white;
+    text-decoration: underline;
+}
+
+
+h1{
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+    color: white;
+}

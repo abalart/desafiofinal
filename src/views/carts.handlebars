@@ -1,0 +1,42 @@
+<div class="carts-container">
+    <h1>
+        Carrito de compras
+    </h1>
+    <div class="carts">
+        <table class="table-cart">
+            <thead>
+                <tr>
+                    <th>title</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>image</th>
+                    <th>quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                    {{#each cart.products}}
+                    <tr>
+                        {{#id}}
+                        <td>{{this.title}}</td>
+                        <td>{{description}}</td>
+                        <td>{{price}}</td>
+                        <td>
+                            {{#each thumbnails}}
+                        <img src="{{this}}" alt="">
+                            {{/each}}
+                        </td>
+                        {{/id}}
+                        <td>{{this.quantity}}</td>
+                    </tr>
+                    {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div >
+    <form class="send-cart" action="/api/carts/{{cart._id}}/purchase" method="post">
+        <input class="botons" type="submit">
+    </form>
+</div>
+
+<link rel="stylesheet" href="/css/cart.css">

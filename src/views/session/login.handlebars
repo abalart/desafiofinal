@@ -1,0 +1,25 @@
+<div class="container">
+
+    <div class="form-container">
+        <h1>Log in</h1>
+        <form action="/session/login" method="post">
+            <label for="email">email</label>
+            <input class="controls" id="email" type="text" name="email" required placeholder="Enter your email">
+
+            <label for="password">password</label>
+            <input class="controls" type="password" name="password" required id="password" placeholder="Enter your password">
+            <input class="botons" type="submit" value="login">
+            <div>---------------------------------------------------------------------</div>
+            <p>
+                <a href="/session/sendrestore">Forgot your password?</a>
+            </p>
+            <p>
+                <a href="/session/register">New user? Click here</a>
+            </p>
+        </form>
+        <a href="/session/github"><button class="botons">Sign in to GitHub</button></a>
+    </div>
+
+</div>
+
+<link rel="stylesheet" href="/css/log.css">

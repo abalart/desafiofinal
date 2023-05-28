@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="form-container">
+        <h1>Change password</h1>
+        <p>introduce you email adrress for send the link with to restore your password</p>
+        <form action="/session/sendrestore" method="post">
+            {{#if message}}
+            <p style="color: red;">{{message}}</p>
+            {{/if}}
+            <label for="email">email:</label>
+            <input class="controls" type="email" name="email" required id="email" placeholder="Enter your email">
+            <button class="botons" type="submit">Send link</button>
+        </form>
+    </div>
+</div>
+<link rel="stylesheet" href="/css/log.css">
