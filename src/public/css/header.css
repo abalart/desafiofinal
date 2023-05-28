@@ -16,7 +16,7 @@ header nav{
     margin: 20px;
     padding: 5px;
     border-radius: 5px;
-    box-shadow: 7px 13px 37px #000;
+    box-shadow: 7px 13px 37px;
     background-color: #2a3942;
 }
 
