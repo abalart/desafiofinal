@@ -127,7 +127,7 @@ router.post('/sendrestore', async (req, res) => {
                             <tr>
                                 <td style="border-bottom:1px solid #cccccc;background-color: #009879">
                                     <p style="display: inline-block; border-radius: 5px;">
-                                        <a style="text-decoration:none;color:#202c33;font-size: 28px">Wsp Marketplace  <img style="display:inline;max-height:28px;width:auto" src="cid:wsp.ico" alt=""></a>
+                                        <a style="text-decoration:none;color:#202c33;font-size: 28px">Ecommerce  <img style="display:inline;max-height:28px;width:auto" src="cid:wsp.ico" alt=""></a>
                                     </p>
                                 </td>
                             </tr>
@@ -191,9 +191,7 @@ router.post('/sendrestore', async (req, res) => {
         `,
         attachments: [
             {
-                filename: 'whatsapp.ico',
-                path: __dirname + '/public/img/whatsapp.ico',
-                cid: 'wsp.ico'
+                
             },
             {
                 filename: 'bg-chat.png',

@@ -1,53 +1,27 @@
 <div class="box-rtp">
-    <h1 class="rtp-title">Carrito en curso</h1>
-    <table id="productsTable">
-        <tr>
-            <td><strong>Product</strong></td>
-            <td><strong>thumbnail</strong></td>
-            <td><strong>Description</strong></td>
-            <td><strong>Price</strong></td>
-            <td><strong>Stock</strong></td>
-            <td><strong>Category</strong></td>
-        </tr>
-        {{#each data}}
-        <tr>
-            <td>{{title}}</td>
-            <td>
-                {{#each thumbnails}}
-                    <img src="{{this}}" alt="">
-                {{/each}}
-            </td>
-            <td>{{description}}</td>
-            <td>{{price}}</td>
-            <td>{{stock}}</td>
-            <td>{{category}}</td>
-        </tr>
-        {{/each}}
-    </table>
-
+    <h1 class="rtp-title">Administre aquí el catalogo de venta</h1>
     <div id="moving" class="addel">
-        <h2>Add productos</h2>
         <form id="addFormRealTime">
             <label for="title">Nombre del producto</label>
             <input type="text" name="title" id="title">
             <br>
-            <label for="description">Descripción del prodcuto</label>
+            <label for="description">Descripción del producto</label>
             <br>
             <textarea name="description" id="description" cols="30" rows="10"></textarea>
             <br>
-            <label for="price">Precio del prodcuto</label>
+            <label for="price">Precio del producto</label>
             <input type="text" name="price" id="price">
             <br>
-            <label for="thumbnail">Foto del prodcuto</label>
+            <label for="thumbnail">Foto del producto</label>
             <input type="text" name="thumbnail" id="thumbnail">
             <br>
-            <label for="stock">Stock del prodcuto</label>
+            <label for="stock">Stock del producto</label>
             <input type="text" name="stock" id="stock">
             <br>
-            <label for="category">Categoria del prodcuto</label>
+            <label for="category">Categoria del producto</label>
             <input type="text" name="category" id="category">
             <br>
-            <button id="addbtnRealTime" type="submit">Ingresar Producto</button>
+            <button id="addbtnRealTime" type="submit">Add product</button>
         </form>
 
         <h2>Delete product</h2>
@@ -55,20 +29,20 @@
             <label for="title">Nombre del producto</label>
             <input type="text" name="title" id="title">
             <br>
-            <label for="description">Descripción del prodcuto</label>
+            <label for="description">Descripción del producto</label>
             <br>
             <textarea name="description" id="description" cols="30" rows="10"></textarea>
             <br>
-            <label for="price">Precio del prodcuto</label>
+            <label for="price">Precio del producto</label>
             <input type="text" name="price" id="price">
             <br>
-            <label for="thumbnail">Foto del prodcuto</label>
+            <label for="thumbnail">Foto del producto</label>
             <input type="text" name="thumbnail" id="thumbnail">
             <br>
-            <label for="stock">Stock del prodcuto</label>
+            <label for="stock">Stock del producto</label>
             <input type="text" name="stock" id="stock">
             <br>
-            <label for="category">Categoria del prodcuto</label>
+            <label for="category">Categoria del producto</label>
             <input type="text" name="category" id="category">
             <br>
             <button id="delbtnRealTime" type="submit">Delete Product</button>

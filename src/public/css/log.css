@@ -27,18 +27,6 @@
     padding:24px 0 24px 0;
 }
 
-form{
-    /* width: 400px;
-    background-color: #2a3942;
-    padding: 30px;
-    border-radius: 4px;
-    margin: auto;
-    color: white;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    box-shadow: 7px 13px 37px #000; */
-}
-
 form h4{
     font-size: 22px;
     margin-bottom: 20px;
@@ -46,7 +34,7 @@ form h4{
 
 .controls{
     width: 100%;
-    background: #009879;
+    background: #a5ded3;
     padding: 10px;
     border-radius: 4px;
     margin-bottom: 16px;
@@ -76,7 +64,7 @@ form a:hover{
 
 .botons{
     width: 100%;
-    background: #009879;
+    background: #002398;
     border: none;
     padding: 12px;
     color: white;

@@ -10,7 +10,7 @@ router.get('/', (req, res) =>{
 });
 
 router.get('/set', (req, res)=>{
-    res.cookie('CookieLucas', 'aguante el god of war').json({cookieStatus: 'create'});
+    res.cookie('CookieDePrueba', 'Prueba').json({cookieStatus: 'create'});
 });
 
 router.get('/get', (req, res)=>{
@@ -22,10 +22,10 @@ router.get('/get', (req, res)=>{
 });
 
 router.delete('/delete', (req, res)=>{
-    res.clearCookie('CookieLucas').json({ cookieStatus: 'Delete CookieLucas'});
+    res.clearCookie('CookieDePrueba').json({ cookieStatus: 'Delete CookieDePrueba'});
 })
 
 router.get('/setsigned', (req, res)=>{
-    res.cookie('CookieLucas', 'aguante el god of war', {signed: true}).json({cookieStatus: 'create cookie signed'});
+    res.cookie('CookieDePrueba', 'CookieDePrueba', {signed: true}).json({cookieStatus: 'create cookie signed'});
 })
 
