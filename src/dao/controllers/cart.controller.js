@@ -218,8 +218,8 @@ export const purchase = async (req, res) =>{
         }
         await CartService.update(cid, status.noStock);
         if(status.totalPrice>0){
-            const resultTocken = await TicketService.create(user.email, status.totalPrice);
-            status.tocken = resultTocken;
+            const resulttoken = await TicketService.create(user.email, status.totalPrice);
+            status.token = resulttoken;
         }
         res.json({status: 'successful', status});
     } catch (error) {
