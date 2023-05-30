@@ -103,7 +103,7 @@ const env = () => {
 
     // funcion importada con todos los routes
     run(io, app, specs);
-    //MongoSingleton.getInstance(app);
+    
 }
 
 env();
