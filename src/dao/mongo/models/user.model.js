@@ -12,7 +12,17 @@ const userSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "carts"
     },
-    role: { type: String, default: 'user' }
+    role: { type: String, default: 'user' },
+    documents: {
+        type: [
+            {
+                name: String,
+                reference: String
+            }
+        ],
+        default: []
+    },
+    last_conection: Date
 });
 
 mongoose.set("strictQuery", false);

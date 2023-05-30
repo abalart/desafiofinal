@@ -67,7 +67,7 @@ app.use(session({
         },
         ttl: 15
     }),
-    secret: '12345', 
+    secret: '12345', //Tomar de variable de entorno
     resave: true, 
     saveUninitialized: true 
 }));

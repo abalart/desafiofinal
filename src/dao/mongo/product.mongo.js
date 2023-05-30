@@ -21,6 +21,13 @@ export default class Product{
         }
     }
 
+       getBy = async (params) =>{
+        try {
+            return await prodModel.find({'owner.role': params.role, 'owner.id': params.id}).lean().exec();
+        } catch (error) {
+            console.log(error);
+        }
+                                }
     create = async (newProd) => {
         try {
             const result = await prodModel.create(newProd);

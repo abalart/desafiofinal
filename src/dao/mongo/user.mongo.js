@@ -5,8 +5,7 @@ export default class User {
 
     getAll = async () => {
         try {
-            const users = await userModel.find().lean().exec();
-            return users;
+             return await userModel.find().lean().exec();
         } catch (error) {
             console.log('Error to have users: ' + error);
         }
@@ -21,9 +20,9 @@ export default class User {
         }
     }
 
-    getByEmail = async (email) => {
+     getBy = async (params) => {
         try {
-            const user = await userModel.findOne({ email: email }).lean().exec();
+            const user = await userModel.findOne(params).lean().exec();
             return user;
         } catch (error) {
             console.log(error);
@@ -32,7 +31,7 @@ export default class User {
 
     create = async (newUser) => {
         try {
-            const user = await userModel.findOne({ name: newUser.name });
+            const user = await userModel.findOne({ name: newUser.email });
             if (user) return user;
             const result = await userModel.create(newUser);
             return result;
@@ -45,11 +44,12 @@ export default class User {
         try {
             const result = await userModel.findOneAndUpdate(
                 { _id: id }, // Busca el usuario con este email
-                { password: updUser.password }, // Actualiza el campo "name" con este valor
+                updUser, // Actualiza el campo "contraseña"  
                 { new: true } // Devuelve el documento actualizado en lugar del original
             )
                 .then(updatedUser => {
-                    console.log('Usuario actualizado:', updatedUser);
+                    return updatedUser;
+
                 })
                 .catch(error => {
                     console.error('Error al actualizar usuario:', error);

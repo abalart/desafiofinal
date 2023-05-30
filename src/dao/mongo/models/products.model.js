@@ -16,7 +16,10 @@ const productSchema = new mongoose.Schema({
         id:{ 
             type: mongoose.Schema.Types.ObjectId,
             ref: 'users'
-        }
+           },
+                
+           email: String
+
     }
 });
 
