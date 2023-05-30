@@ -23,7 +23,7 @@ const run = (io, app, specs)=>{
         req.io = io;
         next();
     });
-    app.use(addLogger); // + da informacion de la ruta en la que estoy
+    app.use(addLogger);
     
     // routes
     app.use('/apidocs', swaggerUiExpress.serve, swaggerUiExpress.setup(specs))

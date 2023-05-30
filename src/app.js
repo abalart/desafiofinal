@@ -71,33 +71,23 @@ app.use(session({
         },
         ttl: 15
     }),
-    secret: '123456',
-    resave: true, // mantiene la session activa
-    saveUninitialized: true // guarda cualquier cosa asi sea vacio
+    secret: config.secret,
+    resave: true, 
+    saveUninitialized: true 
 }));
 initializePassport()
 app.use(passport.initialize());
 app.use(passport.session());
 
-/**
- * query / consulta
- * una strictquery es una consulta estricta que mediante unos 
- * filtros no deja pasar la informacion o no permite recibirla toda
- */
+
 mongoose.set('strictQuery', false);
 
-/**
- * primer parametro la MONGO_URI del servidor,
- * el segundo parametro es el nombre de la base de datos a conectar,
- * por ultimo un middleware para capturar errores, si aparece un error podemos
- * atajarlo y sino podemos hacer correr el server sin problema,
- * esto sirve para evitar mensajes de errores en consolay afectar al server
- */
+
 const env = () => {
    
-    const httpServer = app.listen(config.port, () => console.log('listening...'));
+    const httpServer = app.listen(config.port);
     // capturamos cualquier error
-    httpServer.on('error', () => console.log('Error'));
+    httpServer.on('error', () =>  req.logger.error('Error: ', error));
     // iniciamos server web socket.io
     const io = new Server(httpServer);
 
