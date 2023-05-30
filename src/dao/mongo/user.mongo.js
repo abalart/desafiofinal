@@ -59,4 +59,23 @@ export default class User {
             console.log('Error in update mongo: ' + error);
         }
     }
+    addDoc = async (id, docName, path) =>{
+        try {
+            const user = await userModel.findById(id);
+            user.documents.push({name: docName, reference: path});
+            user.save();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    updateDoc = async (id, index, docName, path) =>{
+        try {
+            const user = await userModel.findById(id);
+            user.documents[index] = {name: docName, reference: path};
+            user.save();
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }

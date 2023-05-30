@@ -42,10 +42,10 @@ router.get('/secret', passportCall('jwt'), authorization('admin'), (req, res)=>{
     res.send({status: 'success', payload: req.user, role: 'ADMIN'});
 });
 
-router.post('/documents', passportCall('jwt'), authorization(['user','premium','admin']), upload, (req, res) =>{
-    const user = req.user.user;
+router.post('/:uid/documents', upload, (req, res) =>{
 
-    res.json({status: 'success', payload: 'archivo subido' });
+if(!req.file) return res.json({status: 'failed', payload: 'file not upload to server'})
+    res.json({status: 'success', payload: 'congrats file upload' });
 });
 
 

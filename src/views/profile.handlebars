@@ -1,0 +1,23 @@
+<div class="userContainer">
+    {{#user}}
+    <div class="info-container">
+        <h1>User information</h1>
+        <div class="userbox">
+            <div>
+                <h2 class="title">email:</h2>
+                <h2 class="title">Firstname: </h2>
+                <h2 class="title">Lastname: </h2>
+                <h2 class="title">role: </h2>
+            </div>
+            <div>
+                <h2 class="data"> {{email}}</h2>
+                <h2 class="data">{{first_name}}</h2>
+                <h2 class="data">{{last_name}}</h2>
+                <h2 class="data">{{role}}</h2>
+            </div>
+        </div>
+    </div>
+    {{/user}}
+</div>
+
+<link rel="stylesheet" href="/css/profile.css">

@@ -1,0 +1,38 @@
+<div class="products-container">
+    <h1> Welcome to Wsp MarketPlace</h1>
+    <table id="productsTable" class="table-cart">
+        <thead>
+            <tr>
+                <th><strong>Product</strong></th>
+                <th><strong>thumbnail</strong></th>
+                <th><strong>Description</strong></th>
+                <th><strong>Price</strong></th>
+                <th><strong>Stock</strong></th>
+                <th><strong>Category</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <td>{{title}}</td>
+                <td>
+                    {{#each thumbnails}}
+                    <img src="{{this}}" alt="">
+                    {{/each}}
+                </td>
+                <td>{{description}}</td>
+                <td>{{price}}</td>
+                <td>{{stock}}</td>
+                <td>{{category}}</td>
+                <td>
+                    <form class="deleteForm" action="/products/delete/{{_id}}" method="post">
+                        <button class="botons" type="submit">Borrar</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<link rel="stylesheet" href="/css/{{style}}">
