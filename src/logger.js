@@ -2,7 +2,7 @@ import winston from "winston";
 
 const customLevelsOptions = {
     levels: {
-        debug: 0, //desarrollo
+        debug: 0, 
         http: 1,
         info: 2, //produccion
         warning: 3,

@@ -7,7 +7,7 @@ export let Cart;
 export let Message;
 export let Ticket;
 
-
+//Patron de diseño para poder cambiar facilmente a forma en que se hace la persistencia de información
 switch (config.persistence) {
     case 'MONGO':
 

@@ -4,7 +4,7 @@
         <p>introduce you email adrress for send the link with to restore your password</p>
         <form action="/session/sendrestore" method="post">
             {{#if message}}
-            <p style="color: red;">{{message}}</p>
+            <p style="color: rgb(230, 122, 21);">{{message}}</p>
             {{/if}}
             <label for="email">email:</label>
             <input class="controls" type="email" name="email" required id="email" placeholder="Enter your email">

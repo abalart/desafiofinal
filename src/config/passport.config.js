@@ -1,7 +1,7 @@
 import passport from "passport";
-//local
+//Estrategia de login local
 import local from 'passport-local';
-//github
+//Estrategia de login github
 import GitHubStrategy from 'passport-github2';
 import jwt from 'passport-jwt';
 
@@ -10,11 +10,11 @@ import cartModel from '../dao/mongo/models/cart.model.js';
 
 import { createHash, extractCookie, generateToken, isValidPassword } from '../utils.js';
 import config from './config.js';
-//jwt
+//Estrategia de login con jwt
 const JWTStrategy = jwt.Strategy;
 const ExtractJWT = jwt.ExtractJwt;
 
-//local
+
 const LocalStrategy = local.Strategy;
 const initializePassport = () => {
     passport.use('register', new LocalStrategy({
@@ -25,7 +25,7 @@ const initializePassport = () => {
         try {
             const user = await userModel.findOne({ email: username })
             if (user) {
-                console.log('User already exists');
+
                 return done(null, false);
             }
 
@@ -38,7 +38,7 @@ const initializePassport = () => {
                 cart: (await cartModel.create({}))._id,
                 role
             }
-            if (newUser.email == 'adminCoder@coder.com' && password == 'coderAdmin') { (newUser.role = 'admin') };
+            if (newUser.email == 'admin@admin.com' && password == '1234') { (newUser.role = 'admin') };
 
             const result = await userModel.create(newUser);
 
@@ -64,7 +64,7 @@ const initializePassport = () => {
                 return done(null, false)
             };
 
-            //genera el token del jwt
+            //JWT
             const token = generateToken(user);
 
             user.token = token;
@@ -104,7 +104,6 @@ const initializePassport = () => {
     }))
 
     //jwtStrategy
-
     passport.use('jwt', new JWTStrategy({
         jwtFromRequest: ExtractJWT.fromExtractors([extractCookie]),
         secretOrKey: config.private_key,

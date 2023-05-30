@@ -1,4 +1,4 @@
-export default class TicketDTO{
+export default class TicketDTO{ //Procesamiento de la compra
     constructor(ticket){
         this.code = ticket.code;
         this.purchase_datetime = ticket.date;

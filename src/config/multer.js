@@ -43,8 +43,7 @@ const storage = multer.diskStorage({
 });
 
 function fileFilter(req, file, cb){
-    // Comprueba si se desea procesar el archivo
-
+    //Verifico si se puede procesar el archivo
     if (!file.originalname.includes('.pdf') && !file.originalname.includes('.png')) return cb(null, false);
     
     if(file.originalname.includes('.pdf')){

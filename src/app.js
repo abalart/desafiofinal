@@ -1,11 +1,12 @@
-// express
+// Modulo de servidor express
 import express from "express";
-// DB
+// Base de datos a utilizar
 import mongoose from "mongoose";
 // socket
 import { Server } from "socket.io";
-//vista
+//vistas
 import handlebars from "express-handlebars"
+//Documentación
 import swaggerJSDoc from 'swagger-jsdoc';
 
 // cookie
@@ -15,7 +16,7 @@ import session from 'express-session';
 import MongoStore from 'connect-mongo';
 import passport from "passport";
 import initializePassport from "./config/passport.config.js";
-//email
+
 
 //utils
 import config from "./config/config.js";
@@ -23,14 +24,14 @@ import __dirname from './utils.js';
 import run from "./run.js";
 
 
-
+//Inicio el server
 const app = express();
 
 const swaggerOptions = {
     definition: {
         openapi: '3.0.1',
         info: {
-            title: "Documentation de Eccommerce",
+            title: "Documentacion de Eccommerce",
             description: "Proyecto eccommerce"
         }
     },
@@ -71,7 +72,7 @@ app.use(session({
         },
         ttl: 15
     }),
-    secret: '123456', //Verificar
+    secret: 'mysecret', //Verificar
     resave: true, 
     saveUninitialized: true 
 }));

@@ -56,7 +56,7 @@ export default class Cart {
             cart.products[idx].quantity = quantity;
             return await cart.save();
         } catch (error) {
-            console.log('Error to update product in mongo: ' + error);
+            console.log('Error al actualizar producto: ' + error);
         }
     }
 

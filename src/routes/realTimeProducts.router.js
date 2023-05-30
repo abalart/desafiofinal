@@ -32,28 +32,4 @@ router.get('/', async (req, res) => {
 })
 
 
-/* io.on('connection', socket =>{
-    console.log('new cliente connected');
-
-    socket.on('post', async data =>{
-        try {
-            const generatedProd = new prodModel(data);
-            await generatedProd.save();
-    
-            io.emit('post', prodModel.find().lean().exec())
-        } catch (error) {
-            console.log('ERROR: ', error);
-        }
-    })
-    socket.on('delete', async data =>{
-        try {
-
-            const result = await prodModel.deleteOne({id: data})
-            io.emit('delete', await prodModel.find().lean().exec())
-        } catch (error) {
-            console.log('ERROR: ', error);
-        }
-    })
-}) */
-
 export default router;

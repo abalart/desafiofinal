@@ -1,5 +1,5 @@
 import EErros from "../services/errors/enumErrors.js";
-
+//Listo errores para mapearlos hacia el logger
 export default (error, req, res, next) => {
     console.log(error.cause);
 

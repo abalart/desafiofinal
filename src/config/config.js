@@ -1,5 +1,5 @@
 import dotenv from 'dotenv'
-
+//Configuro variables de entorno por ambiente
 dotenv.config()
 export default {
     persistence: process.env.PERSISTENCE,
