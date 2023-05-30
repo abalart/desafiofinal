@@ -1,0 +1,59 @@
+<div class="addel-container">
+    <div>
+        <h1>Agregar productos</h1>
+        <span data-testid="tail-out" data-icon="tail-out" class="arrowmsg"><svg viewBox="0 0 8 13" height="13" width="8"
+                preserveAspectRatio="xMidYMid meet" class="" version="1.1" x="0px" y="0px"
+                enable-background="new 0 0 8 13" xml:space="preserve">
+                <path opacity="0.13" d="M5.188,1H0v11.193l6.467-8.625 C7.526,2.156,6.958,1,5.188,1z"></path>
+                <path fill="currentColor" d="M5.188,0H0v11.193l6.467-8.625C7.526,1.156,6.958,0,5.188,0z"></path>
+            </svg></span>
+    </div>
+    <form class="addel" id="addForm" action="/products/create" method="post">
+        <h4>Add Product</h4>
+        <label for="title">Nombre del producto</label>
+        <input placeholder="Enter product title" class="controls" type="text" name="title" id="title">
+        <label for="description">Descripción del producto</label>
+        <textarea placeholder="Enter product description..." class="controls" name="description" id="description"
+            cols="30" rows="10"></textarea>
+        <label for="price">Precio del producto</label>
+        <input placeholder="Enter product price" class="controls" type="text" name="price" id="price">
+        <label for="thumbnail">Foto del producto</label>
+        <input placeholder="Enter product picture" class="controls" type="text" name="thumbnails" id="thumbnail">
+        <label for="stock">Stock del producto</label>
+        <input placeholder="Enter product stock" class="controls" type="text" name="stock" id="stock">
+        <label for="category">Categoria del producto</label>
+        <input placeholder="Enter product category" class="controls" type="text" name="category" id="category">
+        <input class="botons" type="submit" value="create">
+    </form>
+</div>
+<div class="products-container">
+    <table id="productsTable" class="table-cart">
+        <thead>
+            <tr>
+                <th><strong>Product</strong></th>
+                <th><strong>thumbnail</strong></th>
+                <th><strong>Description</strong></th>
+                <th><strong>Price</strong></th>
+                <th><strong>Stock</strong></th>
+                <th><strong>Category</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each data}}
+            <tr>
+                <td>{{title}}</td>
+                <td>
+                    {{#each thumbnails}}
+                    <img src="{{this}}" alt="">
+                    {{/each}}
+                </td>
+                <td>{{description}}</td>
+                <td>{{price}}</td>
+                <td>{{stock}}</td>
+                <td>{{category}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+<link rel="stylesheet" href="/css/{{style}}">

@@ -38,6 +38,15 @@ export default class ProductRepository {
         }
     }
 
+   getByCreator = async (role, id) =>{
+        try {
+            const products = await this.dao.getBy({role, id});
+            return products;
+        } catch (error) {
+            console.log('Error to get by creator: '+error);
+        }
+    }
+
     create = async (prod) => {
         try {
             const prodToInsert = new ProductDTO(prod);
@@ -58,7 +67,7 @@ export default class ProductRepository {
         }
     }
 
-    delete = async(pid)=>{
+    deleteByOwner = async(pid, owner)=>{
         try {
             return await this.dao.delete(pid);
         } catch (error) {
@@ -69,10 +78,9 @@ export default class ProductRepository {
     delete = async(pid, owner)=>{
         try {
             const prod = await this.getOne(pid);
-            if(prod.owner.role == owner.role || "admin" == owner.role){
-                if(prod.owner.id != owner._id) return null;
-                return await this.dao.delete(pid);
-            }
+            if("admin" == owner.role) return await this.dao.delete(pid);
+                 if(prod.owner.role != owner.role || prod.owner.id != owner._id) return null;
+            return await this.dao.delete(pid);
         } catch (error) {
             console.log('Error to delete service: ' + error);
         }

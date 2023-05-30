@@ -21,9 +21,9 @@ export default class UserRepository {
         }
     }
 
-    getByEmail = async(email)=>{
+        getBy = async(email)=>{
         try {
-            return await this.dao.getByEmail(email);
+            return await this.dao.getBy({email: email});
         } catch (error) {
             console.log('User not found');
         }

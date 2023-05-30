@@ -56,6 +56,10 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser('EccommercecookieToken'))
 
+// mongoose
+// uri para la app del servidor mongo atlas
+
+ 
 
 app.use(session({
     store: MongoStore.create({
@@ -67,7 +71,7 @@ app.use(session({
         },
         ttl: 15
     }),
-    secret: '12345', //Tomar de variable de entorno
+    secret: '123456', //Verificar
     resave: true, 
     saveUninitialized: true 
 }));
@@ -83,7 +87,7 @@ const env = () => {
    
     const httpServer = app.listen(config.port);
     // capturamos cualquier error
-    httpServer.on('error', () =>  req.logger.error('Error: ', error));
+    httpServer.on('error', () => console.log('Error'));
     // iniciamos server web socket.io
     const io = new Server(httpServer);
 

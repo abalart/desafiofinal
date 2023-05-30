@@ -1,18 +1,22 @@
 import { Router } from 'express';
-import { create, deleteProd, getAll, getOne, update } from '../dao/controllers/products.controller.js';
-import { authorization } from '../utils.js';
+import { create, createForGet, deleteProd, deleteForGet, getAll, getOne, update } from '../dao/controllers/products.controller.js';
+import { authorization, passportCall } from '../utils.js';
 
 
 const router = Router();
 
 router.get('/', getAll);
 
-router.get('/:pid', getOne);
+router.get('/one/:pid', getOne);
 
-router.post("/", authorization(['admin', 'premium']), create);
+router.get('/create',passportCall('jwt'), authorization(['admin', 'premium']), createForGet)
 
-router.put('/:pid', authorization(['admin', 'premium']), update);
+router.post("/create",passportCall('jwt'), authorization(['admin', 'premium']), create);
 
-router.delete('/:pid', authorization(['admin', 'premium']), deleteProd);
+router.put('/modific/:pid',passportCall('jwt'), authorization(['admin', 'premium']), update);
+
+router.get('/delete',passportCall('jwt'), authorization(['admin', 'premium']), deleteForGet);
+
+router.post('/delete/:pid', passportCall('jwt'), authorization(['admin', 'premium']), deleteProd);
 
 export default router;

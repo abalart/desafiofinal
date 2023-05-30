@@ -1,4 +1,6 @@
 import CartDTO from "../dao/DTO/cart.dto.js"
+import { ProductService } from "./index.js";
+
 
 export default class CartRepository {
     constructor(dao) {
@@ -31,10 +33,17 @@ export default class CartRepository {
         }
     }
 
-    addProduct = async (id, pid, quantity)=>{
+    addProduct = async (id, pid, quantity, user)=>{
         try {
-            const result = await this.dao.addProduct(id,pid, quantity);
-            return result;
+            const prod = await ProductService.getOne(pid);
+            if(prod.owner.id == user._id) return -1;
+            const cart = await this.getOne(id);
+            const idx = cart.products.findIndex(prod => prod.id == pid);
+            if (idx != -1) {
+                return await this.dao.updateProduct(id, idx, quantity);
+            } else {
+                return await this.dao.addProduct(id,pid, quantity);
+            }
         } catch (error) {
             console.log('Error to add product service' + error);
         }

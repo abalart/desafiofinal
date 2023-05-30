@@ -95,7 +95,7 @@ export const authorization = (aRole) => {
     return async (req, res, next) => {
         const user = req.user.user;
         if (!user) return res.status(401).send({ error: "No autenticado" });
-        if (aRole.includes(user.role)) return res.status(403).send({ error: 'No Permission' })
+            if (!aRole.includes(user.role)) return res.status(403).send({ error: 'No Permission' })
         next();
     }
 }
