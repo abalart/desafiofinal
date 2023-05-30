@@ -30,9 +30,6 @@ export const getOne = async (req, res) =>{
     try {
         const cid =  req.params.cid;
         const cart = await CartService.getOne(cid);
-        console.log("cid:"+cid)
-        console.log("cart:"+cart)
-
         if(!cart){
             req.logger.error(
                 CustomError.createError({
@@ -78,7 +75,8 @@ export const addProduct = async (req, res) =>{
         const pid = req.params.pid;
         const quantity = req.body?.quantity || 1;
         
-        const result = await CartService.addProduct(cid, pid, quantity);
+        const user = req.user.user;
+        const result = await CartService.addProduct(cid, pid, quantity, user);
     
         if(!result){
             req.logger.error(
@@ -204,7 +202,7 @@ export const purchase = async (req, res) =>{
     try {
         const cid = req.params.cid;
         const user = req.user.user;
-        console.log(user);
+        req.logger.info('User: ', user);
         const status = await CartService.purchase(cid);
         if(!status){
             req.logger.error(

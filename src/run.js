@@ -6,7 +6,7 @@ import prodRouter from './routes/products.router.js';
 import sessionRouter from './routes/session.router.js';
 import mockRouter from './routes/mock.router.js';
 import loggerRouter from './routes/logger.router.js';
-//Midlewares
+
 
 import { authorization, passportCall } from './utils.js';
 import ErrorHandler from './middleware/error.js'
@@ -16,8 +16,7 @@ import swaggerUiExpress from 'swagger-ui-express'
 
 
 const run = (io, app, specs)=>{
-    // middleware
-    // enviamos el socket por peticion
+
     
     app.use((req, res, next) =>{
         req.io = io;

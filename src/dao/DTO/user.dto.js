@@ -8,6 +8,8 @@ export default class UserDTO{
         this.password = user.password;
         this.cart = user.cart;
         this.role = user.role;
+        this.documents = user.documents;
+        this.last_conection = Date.now();
     }
 
     getCurrent = ()=>{
@@ -16,7 +18,8 @@ export default class UserDTO{
             last_name: this.last_name,
             email: this.email,
             age: this.age,
-            cart: this.cart
+            cart: this.cart,
+            role: this.role
         }
     }
 }

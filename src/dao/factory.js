@@ -7,10 +7,10 @@ export let Cart;
 export let Message;
 export let Ticket;
 
-console.log(`PERSISTENCE: ${config.persistence}`);
+
 switch (config.persistence) {
     case 'MONGO':
-        console.log('MONGO: ');
+
         mongoose.connect(config.mongo_uri, {
             useNewUrlParser: true,
             useUnifiedTopology: true,

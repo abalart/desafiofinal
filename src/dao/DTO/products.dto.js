@@ -6,7 +6,7 @@ export default class ProductDTO{
         this.status = true;
         this.stock = prod.stock
         this.category = prod.category;
-        this.thumbnails = prod.thumbnails.split('');
+        this.thumbnails = prod.thumbnails.split(',');
         this.owner = prod.owner;
     }
 }

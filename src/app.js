@@ -56,10 +56,6 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser('EccommercecookieToken'))
 
-// mongoose
-// uri para la app del servidor mongo atlas
-
-
 
 app.use(session({
     store: MongoStore.create({
@@ -71,7 +67,7 @@ app.use(session({
         },
         ttl: 15
     }),
-    secret: config.secret,
+    secret: '12345', 
     resave: true, 
     saveUninitialized: true 
 }));

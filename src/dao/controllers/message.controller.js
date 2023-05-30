@@ -4,7 +4,7 @@ export const chat = async(req,res)=>{
     const messages = await MessageService.getAll();
 
     req.io.on('connection', socket => {
-        req.logger.info('new client connected');
+        req.logger.info('new cliente connected');
     
         socket.on('messagein', async data => {
             const messageGenerated = await MessageService.create(data);

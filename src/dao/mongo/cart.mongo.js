@@ -33,12 +33,7 @@ export default class Cart {
     addProduct = async (id, pid, quantity) => {
         try {
             const cart = await cartModel.findById(id);
-            const idx = cart.products.findIndex(prod => prod.id == pid);
-            if (idx != -1) {
-                cart.products[idx].quantity = quantity;
-            } else {
-                cart.products.push({id: pid, quantity: quantity});
-            }
+            cart.products.push({id: pid, quantity: quantity});
             return await cart.save();
         } catch (error) {
             console.log('Error cart not found', error);
@@ -55,15 +50,10 @@ export default class Cart {
         }
     }
 
-    updateProduct = async (id, pid, quantity) => {
+    updateProduct = async (id, idx, quantity) => {
         try {
             const cart = await cartModel.findById(id);
-            const idx = cart.products.findIndex(prod => prod.id == pid);
-            if (idx != -1) {
-                cart.products[idx].quantity = quantity;
-            } else {
-                return { status: 'ERROR', error: 'mongo: Product not found' }
-            }
+            cart.products[idx].quantity = quantity;
             return await cart.save();
         } catch (error) {
             console.log('Error to update product in mongo: ' + error);

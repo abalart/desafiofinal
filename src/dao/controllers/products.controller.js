@@ -24,12 +24,12 @@ export const getAll = async (req, res) => {
         }
 
         const user = req.user.user || {};
-        console.log(user);
+       
         return res.render('home', {
             user,
             role: (user?.role == 'admin'),
             style: 'home.css',
-            data: products.docs
+            data: products
         });
     } catch (error) {
         req.logger.error('Error: ', error);
@@ -56,6 +56,16 @@ export const getOne = async(req, res)=>{
     }
 }
 
+export const createForGet = async (req, res) =>{
+    const user = req.user.user;
+    const products = await ProductService.getByCreator(user.role ,user._id);
+    res.render('addProduct', {
+        user: req.user.user,
+        style: 'home.css',
+        data: products
+    });
+} 
+
 export const create = async(req, res)=>{
     try {
         const product = req.body;
@@ -76,10 +86,8 @@ export const create = async(req, res)=>{
                 })
             )
         }
-        res.json({
-            status: "Success",
-            productAdded
-        })
+            res.redirect('/products/create');
+
     } catch (error) {
         req.logger.error('Error: ', error);
         res.json({
@@ -109,6 +117,18 @@ export const update = async(req, res)=>{
     }
 }
 
+export const deleteForGet = async (req, res) =>{
+    const user = req.user.user;
+    const products = await ProductService.getByCreator(user.role, user._id);
+    res.render('deleteProduct', 
+    {
+        user: user,
+        style: 'home.css',
+        data: products
+    });
+}
+
+
 export const deleteProd = async(req, res)=>{
     try {
         const pid = req.params.pid;
@@ -125,7 +145,7 @@ export const deleteProd = async(req, res)=>{
                 })
             );
         }
-        res.send({ status: 'successful', payload: result });
+        res.redirect('/products/delete');
     } catch (error) {
         req.logger.error('Error: ', error);
     }
