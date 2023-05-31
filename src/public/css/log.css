@@ -13,7 +13,7 @@
 
 .form-container{
     width: 400px;
-    background-color: #2a3942;
+    background-color: #95d11d;
     padding: 30px;
     border-radius: 4px;
     margin: auto;
@@ -34,7 +34,7 @@ form h4{
 
 .controls{
     width: 100%;
-    background: #a5ded3;
+    background: #feffff;
     padding: 10px;
     border-radius: 4px;
     margin-bottom: 16px;
@@ -42,7 +42,7 @@ form h4{
     color: white;
 }
 ::placeholder{
-    color: white;
+    color: rgb(18, 18, 18);
     border: none;;
 }
 
@@ -53,7 +53,7 @@ form p{
 }
 
 form a{
-    color: white;
+    color: rgb(5, 5, 5);
     text-decoration: none;
 }
 
@@ -64,7 +64,7 @@ form a:hover{
 
 .botons{
     width: 100%;
-    background: #002398;
+    background: #b6ff24;;
     border: none;
     padding: 12px;
     color: white;
@@ -83,5 +83,5 @@ h1{
     text-align: center;
     width: 100%;
     font-size: 30px;
-    color: white;
+    color: rgb(2, 2, 2);
 }

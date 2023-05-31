@@ -215,7 +215,7 @@ components:
         price: 19.99
         thumbnails:
           - https://jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUF
-        code: 123456
+        code: 12345
         stock: 10
         category: Electronica
         status: true

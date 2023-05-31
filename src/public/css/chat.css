@@ -76,14 +76,14 @@ input:focus{
     align-items: flex-start;
     padding: 5px;
     overflow: hidden;
-    background-image: url('../img/bg-chat.png');
+    background-image: url('../img/Liebre.JPG');
 }
 .bubble{
     padding: 6px 9px 8px 9px;
     border: solid 1px #082e26;
     border-radius: 8px;
     background-color: #0a2c24;
-    color: #19526f;
+    color: #b6ff24;
     width: auto;
     min-width: 10px;
     max-width: 300px;

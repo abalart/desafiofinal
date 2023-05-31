@@ -17,7 +17,7 @@ header nav{
     padding: 5px;
     border-radius: 5px;
     box-shadow: 7px 13px 37px;
-    background-color: #2a3942;
+    background-color: #b6ff24;
 }
 
 header nav ul{
@@ -32,7 +32,7 @@ header nav ul{
 
 header nav ul li{
     padding: 5px;
-    background-color: #dbdddc;
+    background-color: #b6ff24;;
     border-radius: 5px;
     text-decoration: none;
 }
@@ -41,7 +41,7 @@ header nav ul li a{
     color: white;
     text-decoration: none;
     font-size: 30px;
-    background-color: #2e3358;
+    background-color: #b6ff24;
     padding: 5px;
     border-radius: 5px;
 }

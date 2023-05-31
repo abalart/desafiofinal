@@ -119,7 +119,7 @@ router.post('/sendrestore', async (req, res) => {
                             <tr>
                                 <td style="border-bottom:1px solid #cccccc;background-color: #009879">
                                     <p style="display: inline-block; border-radius: 5px;">
-                                        <a style="text-decoration:none;color:#202c33;font-size: 28px">Wsp Marketplace  <img style="display:inline;max-height:28px;width:auto" src="cid:wsp.ico" alt=""></a>
+                                        <a style="text-decoration:none;color:#202c33;font-size: 28px">My Eccomerce <img style="display:inline;max-height:28px;width:auto" alt=""></a>
                                     </p>
                                 </td>
                             </tr>
@@ -165,7 +165,7 @@ router.post('/sendrestore', async (req, res) => {
                                 <td style="padding:48px 24px 0 24px">
                                     <p
                                         style="font-family:'SF Pro Text',-apple-system,BlinkMacSystemFont,Roboto,'Segoe UI',Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-size:12px;font-weight:400;line-height:1.4;color:#6a6f73;margin:0">
-                                        Wsp marketplace <a
+                                        My Eccommerce <a
                                             href="https://www.google.com/maps/search/600+Harrison+Street?entry=gmail&amp;source=g">600
                                             Harrison Street</a> , 3rd Floor, San Francisco, CA 94107. </p>
                                 </td>

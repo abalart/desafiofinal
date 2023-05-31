@@ -31,8 +31,8 @@ const swaggerOptions = {
     definition: {
         openapi: '3.0.1',
         info: {
-            title: "Documentacion de Eccommerce",
-            description: "Proyecto eccommerce"
+            title: "Documentacion de Ecommerce",
+            description: "Proyecto Mercado liebre"
         }
     },
     apis: [`${__dirname}/docs/**/*.yaml`]
@@ -72,7 +72,7 @@ app.use(session({
         },
         ttl: 15
     }),
-    secret: 'mysecret', //Verificar
+    secret: '12345', //Verificar
     resave: true, 
     saveUninitialized: true 
 }));

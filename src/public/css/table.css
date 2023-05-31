@@ -13,8 +13,8 @@
 }
 
 .table-cart thead tr {
-    background-color: #dfb338;
-    color: #ffffff;
+    background-color: #b6ff24;;
+    color: #050505;
     text-align: left;
     font-weight: bold;
 }
@@ -32,7 +32,7 @@
 .table-cart tbody tr:nth-of-type(even) {
     background-color: #202c33;
     font-weight: bold;
-    color: #f0ee96;
+    color: #0b0b0b;
 }
 
 .table-cart tbody tr:last-of-type {
