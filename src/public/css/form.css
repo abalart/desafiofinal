@@ -33,11 +33,11 @@
     padding: 10px;
     border-radius: 4px;
     margin-bottom: 16px;
-    border: 1px solid white;
-    color: white;
+    border: 1px solid rgb(22, 21, 21);
+    color:#000;
 }
 ::placeholder{
-    color: white;
+    color: rgb(7, 7, 7);
     border: none;;
 }
 .addel p{
@@ -67,5 +67,5 @@
 .send-cart input{
     border-radius: 4px;
     color: white;
-    box-shadow: 7px 13px 37px #9a9595;
+    box-shadow: 7px 13px 37px #ac2929;
 }
